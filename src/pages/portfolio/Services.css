@@ -1,0 +1,17 @@
+
+.service-con-bgimage{
+    position: relative;
+}
+
+.carousel-container img {
+    height: 400px;
+    object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.service-servicecards{
+    position: relative;
+    bottom: 100px;
+}

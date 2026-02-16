@@ -1,0 +1,148 @@
+*{
+  font-family: 'DM Sans';
+}
+
+body{
+  margin: 0;
+}
+section {
+    min-height: calc(100vh - 66px);
+    overflow-x: hidden;
+}
+
+.btn-arjun{
+  background-color: #FFB3A2;
+}
+.btn-arjun:hover{
+  background-color: #ffd7ce;
+  border: 1px solid #FFB3A2;
+
+}
+
+.section-bg1{
+  background-color: rgb(255, 251, 251);
+}
+.section-bg2{
+  background-color: rgb(253, 244, 242);
+}
+span{
+  font-family: inherit;
+}
+h1,h2,h3,h4,h5{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+}
+.dmsans-font{
+    font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.baseofimage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffc9bd;
+  border-radius: 25px;
+}
+
+.childimage {
+  position: relative;
+  top: -12px;
+  left: -12px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.dark-theme .childimage{
+  box-shadow: 0 8px 25px rgba(248, 237, 237, 0.15);
+}
+
+.childimage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 25px;
+  border: 1px solid #c7c7c7;
+}
+
+/* .childimage-line {
+  position: absolute;
+  bottom: -1px;
+  left: 50px;
+  width: 100vw;
+  height: 1px;
+  border-bottom: 2px solid #ffefeb;
+  border-radius: 0 0 0 25px;
+}   */
+.footer{
+  background-color: #FFB3A2;
+}
+.google-map {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.google-map iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect */
+.google-map:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+.hover-parent .highlight-color,
+.hover-parent .highlight-bg,
+.hover-parent .highlight-underline{
+  transition: all 0.4s ease;
+}
+
+/* highlight-color */
+.hover-parent:hover .highlight-color
+{
+  color: #ff8989;
+}
+
+
+/* highlight-bg */
+.highlight-bg {
+  position: relative;
+}
+.highlight-bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0%;
+  height: 23px;
+  background-color: rgba(145, 140, 219, 0.2);
+  transition: width 0.3s ease;
+}
+.hover-parent:hover .highlight-bg::after {
+  width: 100%;
+}
+
+/* highlight-underline */
+.highlight-underline {
+  position: relative;
+}
+.highlight-underline::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  bottom: -1px;
+  width: 0%;
+  height: 1px;
+  background-color: rgb(255, 112, 112,0.5);
+  transition: width 0.3s ease;
+}
+.hover-parent:hover .highlight-underline::after {
+  width: 100%;
+}

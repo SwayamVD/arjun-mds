@@ -1,0 +1,19 @@
+.badge{
+    height: 45px;
+    width:  45px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #FFD9D5;
+}
+.badge-female{
+   background-color: #ffcddc;
+}
+.badge-male{
+   background-color: #C8EAFB;
+}
+.badge img{
+    height: 25px;
+}

@@ -1,0 +1,13 @@
+section{
+    border-bottom: 2px solid rgb(255, 156, 156);
+    scroll-margin-top: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-container{
+    border-bottom: 2px solid rgb(255, 156, 156);
+    scroll-margin-top: 66px;
+    display: flex;
+    align-items: center;
+}

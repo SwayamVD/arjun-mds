@@ -1,0 +1,60 @@
+import Badge from '../../components/Badge';
+export default function Contact() {
+    const contactdetails = [
+        {
+            iconpath:"https://www.svgrepo.com/show/521544/call-receive.svg",
+            type:"Phone",
+            value:"9850263331"
+        },
+        {
+            iconpath:"https://www.svgrepo.com/show/533194/mail-alt.svg",
+            type:"Email",
+            value:"amolmojad@gmail.com"
+        },
+        {
+            iconpath:"https://www.svgrepo.com/show/418950/address-location-map.svg",
+            type:"Address",
+            value:"Shop No 16, Gaurav Plaza, Near Vandana Park, Wadala Parthardi Raod, Indira Nagar, Nashik-422009, Maharashtra"
+        },
+        {
+            iconpath:"https://www.svgrepo.com/show/532125/clock-two.svg",
+            type:"Availability",
+            value:"Mon-Sat: 6am-9pm"
+        }
+    ];
+
+    return (
+        <div id='contact' className="section-container py-5 container-fluid d-flex flex-column section-bg2">
+            <div className="container">
+                <h2 className="mb-4 display-6 playfair-font">Contact</h2>
+
+                <div className="row d-flex align-items-top justify-content-start gap-3">
+                    {contactdetails.map((contact,index)=>(
+                        <div key={index} className="col-12 col-md-4 d-flex gap-3 p-2">
+                            <Badge iconpath={contact.iconpath} color="" />
+                            <div className="d-flex flex-column">
+                                <span className='fs-6 text-secondary'>{contact.type}</span>
+                                <p className='fs-5 fw-semibold'>{contact.value}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Google Map */}
+                <div className="mt-3 google-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1874.9310733355028!2d73.78400315672167!3d19.97229884533708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb23bb487507%3A0x7f9d279d33ebd28d!2sArjun%20Driving%20School!5e0!3m2!1sen!2sin!4v1771156352368!5m2!1sen!2sin"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Arjun Driving School Location"
+                ></iframe>
+                </div>
+
+            </div>
+        </div>
+    );
+}

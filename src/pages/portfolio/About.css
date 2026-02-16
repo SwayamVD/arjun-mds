@@ -1,0 +1,7 @@
+.about-section .childimage-line {
+  position: absolute;
+  bottom: -2px;
+  right: 20px;
+  left: auto !important;          /* IMPORTANT */
+  width: calc(100vw - 50px);
+}

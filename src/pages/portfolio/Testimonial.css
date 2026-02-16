@@ -1,0 +1,91 @@
+/* .reviews-container {
+  height: 400px;
+  overflow-y: auto;
+  padding: 50px 10px;  
+  scrollbar-width: none; 
+}
+.reviews-container::-webkit-scrollbar {
+  display: none; 
+} */
+
+.reviews-container {
+  height: 400px;
+  overflow: hidden;   /* important: hide overflow */
+  padding: 50px 10px;
+}
+
+/* Scroll animation */
+.scroll-up {
+  animation: scrollUp 20s linear infinite;
+}
+
+@keyframes scrollUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+.reviewborder{
+  border: 2px solid #FFB3A2;
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+}
+.review-col{
+    gap: 45px;
+    width: 50%;
+}
+@media (max-width: 768px){
+  .review-col{
+    gap: 45px;
+    width: 100%;
+  }
+}
+.reviewcard{
+    background-color: #fff;
+    padding: 20px 20px 15px 20px;
+    border: 2px solid #FFB3A2;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 40px;
+}
+.revicecard-name{
+    position: absolute;
+    background-color: #FFB3A2;
+    top: -27px;
+    left: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    padding-right: 15px;
+    gap: 10px;
+    border-radius: 20px;
+}
+.review-text{
+    margin-top: 10px;
+}
+
+.review-ratingcard{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: 10px;
+  gap: 20px;
+  top: -33px;
+  left: 25px;
+  background-color: #FFFBFB;
+
+}
+.review-justdial-redirect{
+  position: relative;
+}
+.rating-box {
+  line-height: 1.3;
+  justify-items: center;
+}
