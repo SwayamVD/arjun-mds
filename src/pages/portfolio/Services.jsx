@@ -30,7 +30,7 @@ export default function Services() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <section id="services" className="section-bg1">
+        <section id="services" className="section-bg2">
             <div className="container p-2 mt-md-5">
                 <h1 className="text-center mb-3 display-5 ">My Services</h1>
                 {/* <div className="d-flex flex-wrap justify-content-evenly">

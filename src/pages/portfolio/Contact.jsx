@@ -1,3 +1,4 @@
+import './Contact.css'
 import Badge from '../../components/Badge';
 export default function Contact() {
     const contactdetails = [
@@ -14,7 +15,7 @@ export default function Contact() {
         {
             iconpath:"https://www.svgrepo.com/show/418950/address-location-map.svg",
             type:"Address",
-            value:"Shop No 16, Gaurav Plaza, Near Vandana Park, Wadala Parthardi Raod, Indira Nagar, Nashik-422009, Maharashtra"
+            value:"Shop No 16, Gaurav Plaza, Near Vandana Park, Wadala Parthardi Raod, Indira Nagar, Nashik-422009, Maharashtra."
         },
         {
             iconpath:"https://www.svgrepo.com/show/532125/clock-two.svg",
@@ -27,18 +28,54 @@ export default function Contact() {
         <div id='contact' className="section-container py-5 container-fluid d-flex flex-column section-bg2">
             <div className="container">
                 <h2 className="mb-4 display-6 playfair-font">Contact</h2>
-
-                <div className="row d-flex align-items-top justify-content-start gap-3">
-                    {contactdetails.map((contact,index)=>(
-                        <div key={index} className="col-12 col-md-4 d-flex gap-3 p-2">
-                            <Badge iconpath={contact.iconpath} color="" />
-                            <div className="d-flex flex-column">
-                                <span className='fs-6 text-secondary'>{contact.type}</span>
-                                <p className='fs-5 fw-semibold'>{contact.value}</p>
-                            </div>
+                <div className="row">
+                    <div className="col-md-8">
+                        <div className="row d-flex align-items-top justify-content-start gap-3">
+                            {contactdetails.map((contact,index)=>(
+                                <div key={index} className="col-12 col-md-4 d-flex gap-3 p-2 w-auto">
+                                    <Badge iconpath={contact.iconpath} color="" />
+                                    <div className="d-flex flex-column">
+                                        <span className='fs-6 text-secondary'>{contact.type}</span>
+                                        <span className='fs-5 fw-semibold'>{contact.value}</span>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+                    <div className="col-md-4">
+                        <div className="contactdirect">
+                            <span className='fs-4'>Message on</span>
+                            <div className="d-flex gap-3 mt-md-3">
+                                <a 
+                                href="https://api.whatsapp.com/send?phone=9850263331" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className='text-decoration-none text-dark'
+                                >
+                                <div className="contactbadge whatsapp">
+                                    <img src="https://www.svgrepo.com/show/510342/whatsapp.svg" height="30px" alt="logo" />
+                                    Whatsapp
+                                </div>
+                                </a>
+
+                                <a 
+                                href="mailto:yourmail@gmail.com"
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className='text-decoration-none text-dark'
+                                >
+                                <div className="contactbadge mail">
+                                    <img src="https://www.svgrepo.com/show/533194/mail-alt.svg" height="30px" alt="logo" />
+                                    Mail
+                                </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+
+
 
                 {/* Google Map */}
                 <div className="mt-3 google-map">

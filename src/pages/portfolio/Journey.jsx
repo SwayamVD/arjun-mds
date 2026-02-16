@@ -18,7 +18,7 @@ export default function Journey() {
   ];
 
   return (
-    <section className="section-bg2 py-5">
+    <section className="section-bg1 py-5">
       <div className="container">
         <h2 className="text-center mb-5 display-5 playfair-font">My Journey</h2>
         <div className="timeline">
@@ -30,7 +30,7 @@ export default function Journey() {
               }`}
             >
               <div className="timeline-content">
-                <h5>{step.title}</h5>
+                <span className="fs-4">{step.title}</span>
                 <p>{step.text}</p>
               </div>
 

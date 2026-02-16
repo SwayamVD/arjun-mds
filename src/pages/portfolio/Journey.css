@@ -36,10 +36,11 @@
 
 /* Content box */
 .timeline-content {
-  background: #fff;
+  background-color: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  border: 2px solid #ffc9bd;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07); */
 }
 
 /* Circle */
@@ -51,6 +52,7 @@
   height: 20px;
   background: #ED8D8D;
   color: #fff;
+  border: 2px solid rgb(253, 244, 242);
   border-radius: 50%;
   display: flex;
   align-items: center;
