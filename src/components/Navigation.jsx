@@ -43,11 +43,12 @@ export default function Navigation({ theme, toggleTheme}) {
                             <a className="nav-link" href="#about">About Me</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#services">Services</a>
-                        </li>
-                        <li className="nav-item">
                             <a className="nav-link" href="#testimonials">Testimonials</a>
                         </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#services">Services</a>
+                        </li>
+
                         <li className="nav-item">
                             <a className="nav-link" href="#contact">Contact</a>
                         </li>
