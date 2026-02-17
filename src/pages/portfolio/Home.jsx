@@ -38,8 +38,8 @@ export default function Home() {
                         </div>
                         </div>
                         <div className="hero-buttons mt-4 mb-4 mb-md-0  d-flex flex-row justify-content-center">
-                            <button className="btn btn-arjun me-3">My Services</button>
-                            <button className="btn btn-outline-dark">Call Now</button>
+                            <a className="btn btn-arjun me-3 text-decoration-none text-dark" href='#services'>My Services</a>
+                            <a className="btn btn-outline-dark text-decoration-none text-dark" href='#contact'>Call Now</a>
                         </div>
                     </div>
                 </div>
