@@ -5,3 +5,11 @@
   left: auto !important;          /* IMPORTANT */
   width: calc(100vw - 50px);
 }
+.about-para{
+  font-size: 18px;
+}
+@media screen and (max-width:786px) {
+  .about-para{
+    font-size: 14px;
+  }
+}

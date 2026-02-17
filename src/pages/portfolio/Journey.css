@@ -79,7 +79,13 @@
     padding-left: 60px;
     text-align: left;
   }
-
+  .timeline-content{
+    text-align: start;
+    padding: 15px;
+  }
+  .timeline-content p{
+    margin-bottom: 0px;
+  }
   .timeline-item.right {
     left: 0;
   }

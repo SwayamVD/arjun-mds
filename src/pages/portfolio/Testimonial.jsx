@@ -56,7 +56,7 @@ const reviews2 = [
     return (
         <section id='testimonials' className='section-bg1'>
             <div className="container">
-                <h2 className="text-center mb-5 display-5 playfair-font">Testinonials</h2>
+                <h2 className="text-center mb-5 display-5 playfair-font">Testimonials</h2>
                 <div className="reviewborder">
                     <div className="review-ratingcard">
                         <a 

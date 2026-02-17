@@ -31,7 +31,7 @@ export default function Services() {
     }, []);
     return (
         <section id="services" className="section-bg2">
-            <div className="container p-2 mt-md-5">
+            <div className="container p-2 mt-5">
                 <h1 className="text-center mb-3 display-5 ">My Services</h1>
                 {/* <div className="d-flex flex-wrap justify-content-evenly">
                     {services.map((service,index)=>(
@@ -43,7 +43,7 @@ export default function Services() {
                         <img src={images[index]} alt="Driving" />
                         </div>
                         <div className="service-servicecards">
-                            <div className="d-flex flex-wrap justify-content-evenly">
+                            <div className="d-flex flex-wrap justify-content-evenly gap-md-0 gap-5">
                                 {services.map((service,index)=>(
                                     <ServiceCard key={index} iconpath={service.iconpath} headline={service.headline} desp={service.desp} />
                                 ))}

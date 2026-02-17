@@ -26,3 +26,9 @@ h4{
 p{
     margin-top: 0px !important;
 }
+
+@media screen and (max-width:576px) {
+    .servicecard{
+        width: 300px;
+    }
+}

@@ -1,11 +1,18 @@
 import './Navigation.css'
 import {useState, useEffect} from "react"
 export default function Navigation({ theme, toggleTheme}) {
+
+const closeNavbar = () => {
+  const navbar = document.getElementById("navbarNav");
+  if (navbar.classList.contains("show")) {
+    navbar.classList.remove("show");
+  }
+};
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
+      if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -24,13 +31,14 @@ export default function Navigation({ theme, toggleTheme}) {
                     
                 </a>
                 <button 
-                    className="navbar-toggler" 
+                    className="navbar-toggler navbar-btn" 
                     type="button" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#navbarNav" 
                     aria-controls="navbarNav" 
                     aria-expanded="false" 
                     aria-label="Toggle navigation"
+                    onClick={() => setScrolled(true)}
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -40,28 +48,31 @@ export default function Navigation({ theme, toggleTheme}) {
                             <a className="nav-link active"  href="#home">Home</a>
                         </li> */}
                         <li className="nav-item">
-                            <a className="nav-link" href="#about">About Me</a>
+                            <a className="nav-link" href="#about" onClick={closeNavbar} >About Me</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#testimonials">Testimonials</a>
+                            <a className="nav-link" href="#testimonials" onClick={closeNavbar}>Testimonials</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#services">Services</a>
+                            <a className="nav-link" href="#services" onClick={closeNavbar}>Services</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#contact">Contact</a>
+                            <a className="nav-link" href="#contact" onClick={closeNavbar}>Contact</a>
                         </li>
-                        <li className="nav-item  d-flex align-items-center">
-                            <button className='togglebtn' >
-                                <img src="https://www.svgrepo.com/show/506518/language.svg" alt="theme" />
-                            </button>
-                        </li>
-                        <li className="nav-item d-flex align-items-center">
-                            <button className='togglebtn' onClick={toggleTheme}>
-                                <img src="/images/themetoggler.png" alt="theme" />
-                            </button>
-                        </li>
+                        <div className="d-flex gap-4 justify-content-between">
+                            <li className="nav-item  d-flex align-items-center">
+                                <button className='togglebtn' >
+                                    <img src="https://www.svgrepo.com/show/506518/language.svg" alt="theme" />
+                                </button>
+                            </li>
+                            <li className="nav-item d-flex align-items-center">
+                                <button className='togglebtn' onClick={toggleTheme}>
+                                    <img src="/images/themetoggler.png" alt="theme" />
+                                </button>
+                            </li>
+                        </div>
+
                     </ul>
                 </div>
             </div>

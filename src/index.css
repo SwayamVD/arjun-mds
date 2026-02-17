@@ -146,3 +146,20 @@ h1,h2,h3,h4,h5{
 .hover-parent:hover .highlight-underline::after {
   width: 100%;
 }
+
+@media screen and (max-width: 576px) {
+  section {
+      min-height: calc(100vh - 100px);
+      overflow-x: hidden;
+  }
+  .baseofimage {
+    margin-top: 20px;
+  }
+  .childimage {
+    top: -5px;
+    left: -5px;
+  }
+  .childimage img {
+    height: 400px;
+  }
+}

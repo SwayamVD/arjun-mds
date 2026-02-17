@@ -30,7 +30,7 @@ export default function Journey() {
               }`}
             >
               <div className="timeline-content">
-                <span className="fs-4">{step.title}</span>
+                <span className="fs-md-4 fs-5 fw-bold" >{step.title}</span>
                 <p>{step.text}</p>
               </div>
 

@@ -18,15 +18,15 @@ export default function Home() {
                         <div className="childimage-line" />
                         </div>
                     </div>
-                    <div className="col-12 col-md-4 text-start  mt-5 mt-lg-0">
+                    <div className="col-12 col-md-4 text-start  mt-3 mt-lg-0">
                         <div className="text-center text-lg-start">
                         <h1 className="tagline playfair-font">
                             Learn to Drive with <span className="highlight-color">Confidence</span> & <span className="highlight-color">Safety</span>.
                         </h1>
 
                         <div className="mt-4 mb-4" >
-                            <p>Start your journey with professional training that prepares you for safe and independent driving.</p>
-                            <ul className="hero-trust mt-3">
+                            <p className='text-start'>Start your journey with professional training that prepares you for safe and independent driving.</p>
+                            <ul className="hero-trust mt-3 text-start">
                             <li><span className="highlight-bg">23+ Years</span> Experience</li>
                             <li>Certified Instructor</li>
                             <li>RTO Approved</li>
@@ -37,7 +37,7 @@ export default function Home() {
                             </ul>
                         </div>
                         </div>
-                        <div className="hero-buttons mt-4">
+                        <div className="hero-buttons mt-4 mb-4 mb-md-0  d-flex flex-row justify-content-center">
                             <button className="btn btn-arjun me-3">My Services</button>
                             <button className="btn btn-outline-dark">Call Now</button>
                         </div>

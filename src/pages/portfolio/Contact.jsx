@@ -35,17 +35,18 @@ export default function Contact() {
                                 <div key={index} className="col-12 col-md-4 d-flex gap-3 p-2 w-auto">
                                     <Badge iconpath={contact.iconpath} color="" />
                                     <div className="d-flex flex-column">
-                                        <span className='fs-6 text-secondary'>{contact.type}</span>
-                                        <span className='fs-5 fw-semibold'>{contact.value}</span>
+                                        <span className='contact-type'>{contact.type}</span>
+                                        <span className='contact-value'>{contact.value}</span>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
                     <div className="col-md-4">
+                        <hr class="min-divider mobile" />
                         <div className="contactdirect">
                             <span className='fs-4'>Message on</span>
-                            <div className="d-flex gap-3 mt-md-3">
+                            <div className="d-flex gap-3 mt-2 ">
                                 <a 
                                 href="https://api.whatsapp.com/send?phone=9850263331" 
                                 target="_blank" 
@@ -76,7 +77,7 @@ export default function Contact() {
                 </div>
 
 
-
+                <hr class="min-divider" />
                 {/* Google Map */}
                 <div className="mt-3 google-map">
                 <iframe

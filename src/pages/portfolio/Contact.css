@@ -17,3 +17,26 @@
 .contactbadge.mail{
     background-color: #FBBC04;
 }
+
+.contact-value{
+    font-weight: bold;
+    font-size: 20px;
+}
+.min-divider.mobile {
+    display: none;
+}
+.min-divider {
+  border: none;
+  height: 1px;
+  background: #ff0000;
+  margin: 20px 0;
+}
+
+@media screen and (max-width:700px) {
+    .min-divider.mobile {
+        display: block;
+    }
+    .contact-value{
+        font-size: 16px;
+    }
+}

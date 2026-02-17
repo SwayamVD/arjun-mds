@@ -89,3 +89,18 @@
   line-height: 1.3;
   justify-items: center;
 }
+@media screen and (max-width: 576px){
+  .reviewborder{
+    padding: 20px;
+    padding-top: 40px;
+  }
+  .review-ratingcard{
+    top: -33px;
+    left: 16px;
+    font-size: 12px;
+  }
+  .review-text{
+      font-size: 14px;
+
+  }
+}
