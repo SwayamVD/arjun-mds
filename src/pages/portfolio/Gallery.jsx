@@ -100,7 +100,7 @@ export default function Gallery() {
   const next3 = items[(current + 3) % items.length];
 
   return (
-    <section id="gallery" className="cus-section section-bg2">
+    <section id="gallery" className="cus-section gallery section-bg2">
       <div className="container">
         {/* Header */}
         <div className="d-flex justify-content-between align-items-center mb-3">
