@@ -5,10 +5,33 @@
 body{
   margin: 0;
 }
-section {
-    min-height: calc(100vh - 66px);
-    overflow-x: hidden;
+
+.cus-section.full-section{
+    /* min-height: calc(100vh - 66px); */
+    min-height: 100vh;
 }
+.cus-section{
+    /* border-bottom: 2px solid rgb(255, 156, 156); */
+    scroll-margin-top: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:786px){
+  .cus-section{
+    padding: 20px;
+  }
+}
+
 
 .btn-arjun{
   background-color: #FFB3A2;
@@ -31,6 +54,9 @@ span{
 h1,h2,h3,h4,h5{
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
+}
+.display-6{
+  font-family: "Playfair Display";
 }
 .dmsans-font{
     font-family: "DM Sans", sans-serif;

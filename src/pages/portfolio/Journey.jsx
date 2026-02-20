@@ -4,41 +4,39 @@ import "./Journey.css";
 export default function Journey() {
   const steps = [
     {
-      title: "2016 – Present | Arjun Motor Driving School",
+      year: "2016 – Present",
+      title: "Arjun Motor Driving School",
       text: "Started own driving school and providing structured driving lessons and test guidance.",
     },
     {
-      title: "2004 – 2015 | Nashik",
+      year: "2004 – 2015",
+      title: "Nashik",
       text: "Worked with an established driving school, handling learner training and RTO preparation.",
     },
     {
-      title: "2000 – 2003 | Thane",
+      year: "2000 – 2003",
+      title: "Thane",
       text: "Completed training and worked under a senior driving instructor to gain practical experience.",
     },
   ];
 
   return (
-    <section className="section-bg1 py-5">
-      <div className="container">
+    <section className="cus-section design-section-1 section-bg1">
+      <div className="container journey-container">
         <h2 className="text-center mb-5 display-5 playfair-font">My Journey</h2>
-        <div className="timeline">
+
+        <div className="journey">
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`timeline-item ${
-                index % 2 === 0 ? "left" : "right"
-              }`}
+              className={`journey-card ${index === 0 ? "active" : ""}`}
             >
-              <div className="timeline-content">
-                <span className="fs-md-4 fs-5 fw-bold" >{step.title}</span>
-                <p>{step.text}</p>
-              </div>
+              <div className="journey-dot"></div>
 
-              <div
-                className={`timeline-circle ${
-                  index === 0 ? "active" : ""
-                }`}
-              >
+              <div className="journey-content">
+                <span className="journey-year">{step.year}</span>
+                <span className="fs-5">{step.title}</span>
+                <p>{step.text}</p>
               </div>
             </div>
           ))}

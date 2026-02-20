@@ -54,10 +54,10 @@ const reviews2 = [
 ];
 
     return (
-        <section id='testimonials' className='section-bg1'>
+        <section id='testimonials' className='cus-section section-bg1'>
             <div className="container">
-                <h2 className="text-center mb-5 display-5 playfair-font">Testimonials</h2>
-                <div className="reviewborder">
+                <h2 className="text-center mb-3 mb-md-5 display-5 playfair-font">Testimonials</h2>
+                <div className="reviewborder ">
                     <div className="review-ratingcard">
                         <a 
                             href="https://maps.app.goo.gl/83JL1wmBmFFbbve47" 

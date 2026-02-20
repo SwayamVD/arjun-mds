@@ -3,7 +3,7 @@ import './Home.css'
 export default function Home() {
 
     return (
-        <section id="home" className="homesection section-bg1">
+        <section id="home" className="cus-section full-section design-section-1 section-bg1">
             <div className="container">
                 <div className="row align-items-center justify-content-around  hover-parent">
                     <div className="col-12 col-md-7">

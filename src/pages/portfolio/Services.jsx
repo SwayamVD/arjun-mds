@@ -1,6 +1,7 @@
 import ServiceCard from "../../components/ServiceCard";
 import './Services.css'
 import { useState,useEffect } from "react";
+
 export default function Services() {
     const services = [
         {
@@ -30,26 +31,43 @@ export default function Services() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <section id="services" className="section-bg2">
-            <div className="container p-2 mt-5">
-                <h1 className="text-center mb-3 display-5 ">My Services</h1>
+        <section id="services" className="cus-section section-bg2">
+            <div className="container">
+                <h1 className="text-center mb-3 mb-md-5 display-5 ">My Services</h1>
                 {/* <div className="d-flex flex-wrap justify-content-evenly">
                     {services.map((service,index)=>(
                         <ServiceCard key={index} iconpath={service.iconpath} headline={service.headline} desp={service.desp} />
                     ))}
                 </div> */}
-                    <div className="service-con-bgimage">
-                        <div className="carousel-container">
-                        <img src={images[index]} alt="Driving" />
-                        </div>
-                        <div className="service-servicecards">
-                            <div className="d-flex flex-wrap justify-content-evenly gap-md-0 gap-5">
-                                {services.map((service,index)=>(
-                                    <ServiceCard key={index} iconpath={service.iconpath} headline={service.headline} desp={service.desp} />
-                                ))}
+                    
+                        {/* <div className="carousel-container">
+                            <img src={images[index]} alt="Driving" />
+                            <div className="service-servicecards">
+                                <div className="d-flex flex-wrap justify-content-evenly gap-md-0 gap-5">
+                                    {services.map((service,index)=>(
+                                        <ServiceCard key={index} iconpath={service.iconpath} headline={service.headline} desp={service.desp} />
+                                    ))}
+                                </div>
                             </div>
+                        </div> */}
+                    <div className="carousel-container mb-md-5">
+                    <img className="carousel-image" src={images[index]} alt="Driving" />
+
+                    <div className="service-servicecards">
+                        <div className="service-wrapper">
+                        {services.map((service, index) => (
+                            <ServiceCard
+                            key={index}
+                            iconpath={service.iconpath}
+                            headline={service.headline}
+                            desp={service.desp}
+                            />
+                        ))}
                         </div>
                     </div>
+                    </div>
+
+                    
             </div>
         </section>
     );

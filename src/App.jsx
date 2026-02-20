@@ -7,6 +7,7 @@ import Services from './pages/portfolio/Services'
 import Journey from './pages/portfolio/Journey'
 import Testimonial from './pages/portfolio/Testimonial'
 import Contact from './pages/portfolio/Contact'
+import Gallery from './pages/portfolio/Gallery';
 import { useState,useEffect } from 'react'
 function App() {
     const [theme,setTheme] = useState("light");
@@ -24,6 +25,7 @@ function App() {
       <Testimonial/>
       <Services/>
       <Journey/>
+      <Gallery/>
       <Contact/>
       <Footer/>
     </>

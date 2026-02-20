@@ -25,7 +25,7 @@ export default function Contact() {
     ];
 
     return (
-        <div id='contact' className="section-container py-5 container-fluid d-flex flex-column section-bg2">
+        <div id='contact' className="cus-section  section-bg1">
             <div className="container">
                 <h2 className="mb-4 display-6 playfair-font">Contact</h2>
                 <div className="row">

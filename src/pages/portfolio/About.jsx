@@ -3,7 +3,7 @@ import Badge from '../../components/Badge';
 export default function About() {
     const badgetexts = ["Training","Lisence Asistance","All RTO Paper Clearance"];
     return (
-        <section id="about" className="py-5 section-bg2 about-section">
+        <section id="about" className="cus-section section-bg2">
             <div className="container">
                 <div className="row d-flex justify-content-between hover-parent">
                     <div className="col-12 col-md-5 ">
