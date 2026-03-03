@@ -1,14 +1,9 @@
-*{
-  font-family: 'DM Sans';
-}
-
 body{
   margin: 0;
 }
 
-.cus-section.full-section{
-    /* min-height: calc(100vh - 66px); */
-    min-height: 100vh;
+.full-section{
+  min-height: calc(100vh - 65px);
 }
 .cus-section{
     /* border-bottom: 2px solid rgb(255, 156, 156); */
@@ -43,12 +38,18 @@ body{
 }
 
 .section-bg1{
-  background-color: rgb(255, 251, 251);
+  /* background-color: rgb(255, 251, 251); */
+  background: radial-gradient(
+      circle at center, 
+      #ffffff 0%,    /* Pure white center */
+      #fffdfa 60%,   /* Stays white longer */
+      #fcf9f2 100%   /* Extremely light "bone" white edges */
+    );
 }
 .section-bg2{
   background-color: rgb(253, 244, 242);
 }
-span{
+/* span{
   font-family: inherit;
 }
 h1,h2,h3,h4,h5{
@@ -61,8 +62,67 @@ h1,h2,h3,h4,h5{
 .dmsans-font{
     font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
+} */
+
+/* ========== Fonts ========== */
+
+span{
+  font-family: inherit;
 }
 
+
+/* ========== ENGLISH ========== */
+
+.lang-en {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.lang-en h1,
+.lang-en h2,
+.lang-en h3,
+.lang-en h4,
+.lang-en h5,
+.lang-en h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+/* ========== MARATHI ========== */
+
+.lang-mr > *{
+  font-family: 'Noto Serif Devanagari', serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.lang-mr h1,
+.lang-mr h2,
+.lang-mr h3,
+.lang-mr h4,
+.lang-mr h5,
+.lang-mr h6 {
+  font-family: 'Noto Serif Devanagari', serif;
+}
+.lang-mr .nav-link{
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 0.5;
+}
+
+.page-wrapper {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .baseofimage {
   position: relative;
   display: flex;
@@ -140,6 +200,16 @@ h1,h2,h3,h4,h5{
 /* highlight-bg */
 .highlight-bg {
   position: relative;
+}
+.lang-mr .highlight-bg::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0%;
+  height: 23px;
+  background-color: rgba(145, 140, 219, 0.2);
+  transition: width 0.3s ease;
 }
 .highlight-bg::after {
   content: "";
