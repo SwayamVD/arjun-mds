@@ -8,47 +8,86 @@ import gallery3 from "../../assets/gallery-3.jpg";
 import gallery4 from "../../assets/gallery-4.jpg";
 import gallery5 from "../../assets/gallery-5.jpg";
 import "./Gallery.css";
+
+const translations = {
+  en: {
+    heading: "Gallery",
+    items: [
+      {
+        id: 1,
+        title: "Instructor's Teaching Desk",
+        description:
+          "A neatly organized desk where the instructor explains traffic rules using charts, driving manuals, and real road scenario diagrams to help students understand road safety fundamentals.",
+      },
+      {
+        id: 2,
+        title: "Traffic Signs Learning Board",
+        description:
+          "A detailed wall display of essential traffic signs and road symbols used during theory lessons to ensure students confidently recognize every signal on the road.",
+      },
+      {
+        id: 3,
+        title: "Simulation Practice Setup",
+        description:
+          "A practical training corner where students observe steering control techniques, parking demonstrations, and defensive driving methods before heading onto real roads.",
+      },
+      {
+        id: 4,
+        title: "One-on-One Guidance",
+        description:
+          "The instructor providing personalized explanations about clutch control, braking distance, and safe lane changing to ensure each student builds confidence behind the wheel.",
+      },
+      {
+        id: 5,
+        title: "Student Progress & Certification",
+        description:
+          "A display area showcasing student progress charts, mock test results, and successful license certifications achieved through structured training and disciplined practice.",
+      },
+    ],
+  },
+  mr: {
+    heading: "गॅलरी",
+    items: [
+      {
+        id: 1,
+        title: "प्रशिक्षकाचे शिकवण्याचे डेस्क",
+        description:
+          "एक व्यवस्थित डेस्क जिथे प्रशिक्षक चार्ट, ड्रायव्हिंग मॅन्युअल आणि वास्तविक रस्त्यावरील परिस्थितीच्या आकृत्या वापरून वाहतूक नियम समजावतात.",
+      },
+      {
+        id: 2,
+        title: "वाहतूक चिन्हे शिकण्याचा बोर्ड",
+        description:
+          "आवश्यक वाहतूक चिन्हे आणि रस्त्यावरील चिन्हांचे तपशीलवार प्रदर्शन जे सिद्धांत धड्यांदरम्यान वापरले जाते.",
+      },
+      {
+        id: 3,
+        title: "सिम्युलेशन सराव सेटअप",
+        description:
+          "एक व्यावहारिक प्रशिक्षण कोपरा जिथे विद्यार्थी स्टीयरिंग नियंत्रण तंत्र, पार्किंग प्रात्यक्षिके आणि संरक्षणात्मक ड्रायव्हिंग पद्धती पाहतात.",
+      },
+      {
+        id: 4,
+        title: "वैयक्तिक मार्गदर्शन",
+        description:
+          "प्रशिक्षक क्लच नियंत्रण, ब्रेकिंग अंतर आणि सुरक्षित लेन बदलण्याबद्दल वैयक्तिक स्पष्टीकरण देत आहेत.",
+      },
+      {
+        id: 5,
+        title: "विद्यार्थी प्रगती आणि प्रमाणपत्र",
+        description:
+          "विद्यार्थी प्रगती चार्ट, मॉक टेस्ट परिणाम आणि यशस्वी परवाना प्रमाणपत्रे प्रदर्शित करणारे क्षेत्र.",
+      },
+    ],
+  },
+};
+
 const items = [
-  {
-    id: 1,
-    image: gallery1,
-    title: "Instructor’s Teaching Desk",
-    description:
-      "A neatly organized desk where the instructor explains traffic rules using charts, driving manuals, and real road scenario diagrams to help students understand road safety fundamentals.",
-    link: "#",
-  },
-  {
-    id: 2,
-    image: gallery2,
-    title: "Traffic Signs Learning Board",
-    description:
-      "A detailed wall display of essential traffic signs and road symbols used during theory lessons to ensure students confidently recognize every signal on the road.",
-    link: "#",
-  },
-  {
-    id: 3,
-    image: gallery3,
-    title: "Simulation Practice Setup",
-    description:
-      "A practical training corner where students observe steering control techniques, parking demonstrations, and defensive driving methods before heading onto real roads.",
-    link: "#",
-  },
-  {
-    id: 4,
-    image: gallery4,
-    title: "One-on-One Guidance",
-    description:
-      "The instructor providing personalized explanations about clutch control, braking distance, and safe lane changing to ensure each student builds confidence behind the wheel.",
-    link: "#",
-  },
-  {
-    id: 5,
-    image: gallery5,
-    title: "Student Progress & Certification",
-    description:
-      "A display area showcasing student progress charts, mock test results, and successful license certifications achieved through structured training and disciplined practice.",
-    link: "#",
-  },
+  { id: 1, image: gallery1, link: "#" },
+  { id: 2, image: gallery2, link: "#" },
+  { id: 3, image: gallery3, link: "#" },
+  { id: 4, image: gallery4, link: "#" },
+  { id: 5, image: gallery5, link: "#" },
 ];
 
 const slideVariants = {
@@ -67,12 +106,6 @@ const slideVariants = {
   }),
 };
 
-// const captionVariants = {
-//   enter: { opacity: 0, y: 12 },
-//   center: { opacity: 1, y: 0 },
-//   exit: { opacity: 0, y: -12 },
-// };
-
 const captionVariants = {
   enter: { opacity: 0, clipPath: "inset(0 100% 0 0)" },
   center: {
@@ -83,7 +116,8 @@ const captionVariants = {
   exit: { opacity: 0, clipPath: "inset(0 0 0 100%)" },
 };
 
-export default function Gallery() {
+export default function Gallery({ lang }) {
+  const t = translations[lang] || translations.en;
   const [[current, direction], setCurrent] = useState([0, 0]);
 
   const paginate = useCallback(
@@ -95,17 +129,22 @@ export default function Gallery() {
   );
 
   const item = items[current];
+  const itemText = t.items[current];
   const next1 = items[(current + 1) % items.length];
   const next2 = items[(current + 2) % items.length];
   const next3 = items[(current + 3) % items.length];
 
   return (
-    <section id="gallery" className="cus-section gallery section-bg2">
+    <section
+      id="gallery"
+      className="cus-section gallery section-bg2 page-wrapper"
+      key={lang}
+    >
       <div className="container">
         {/* Header */}
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div>
-            <h1 className="section-title m-0">Gallery</h1>
+            <h1 className="section-title m-0">{t.heading}</h1>
           </div>
 
           <div className="d-flex gap-2">
@@ -140,7 +179,7 @@ export default function Gallery() {
               <motion.img
                 key={item.id}
                 src={item.image}
-                alt={item.title}
+                alt={itemText.title}
                 custom={direction}
                 variants={slideVariants}
                 initial="enter"
@@ -178,7 +217,7 @@ export default function Gallery() {
                   <motion.img
                     key={`peek-${peek.id}-${i}`}
                     src={peek.image}
-                    alt={peek.title}
+                    alt={t.items[(current + i + 1) % items.length].title}
                     custom={direction}
                     variants={slideVariants}
                     initial="enter"
@@ -217,8 +256,8 @@ export default function Gallery() {
               transition={{ duration: 0.3 }}
             >
               <p className="text-muted small mb-0">
-                <strong className="text-body">{item.title}.</strong>{" "}
-                {item.description}
+                <strong className="text-body">{itemText.title}.</strong>{" "}
+                {itemText.description}
               </p>
             </motion.div>
           </AnimatePresence>

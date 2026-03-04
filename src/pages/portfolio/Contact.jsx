@@ -1,38 +1,84 @@
 import "./Contact.css";
 import Badge from "../../components/Badge";
-export default function Contact() {
-  const contactdetails = [
-    {
-      iconpath: "https://www.svgrepo.com/show/521544/call-receive.svg",
-      type: "Phone",
-      value: "9850263331",
-    },
-    {
-      iconpath: "https://www.svgrepo.com/show/533194/mail-alt.svg",
-      type: "Email",
-      value: "amolmojad@gmail.com",
-    },
-    {
-      iconpath: "https://www.svgrepo.com/show/418950/address-location-map.svg",
-      type: "Address",
-      value:
-        "Shop No 16, Gaurav Plaza, Near Vandana Park, Wadala Parthardi Raod, Indira Nagar, Nashik-422009, Maharashtra.",
-    },
-    {
-      iconpath: "https://www.svgrepo.com/show/532125/clock-two.svg",
-      type: "Availability",
-      value: "Mon-Sat: 6am-9pm",
-    },
-  ];
+
+const translations = {
+  en: {
+    heading: "Contact",
+    messageOn: "Message on",
+    whatsapp: "Whatsapp",
+    mail: "Mail",
+    contactDetails: [
+      {
+        iconpath: "https://www.svgrepo.com/show/521544/call-receive.svg",
+        type: "Phone",
+        value: "9850263331",
+      },
+      {
+        iconpath: "https://www.svgrepo.com/show/533194/mail-alt.svg",
+        type: "Email",
+        value: "amolmojad@gmail.com",
+      },
+      {
+        iconpath:
+          "https://www.svgrepo.com/show/418950/address-location-map.svg",
+        type: "Address",
+        value:
+          "Shop No 16, Gaurav Plaza, Near Vandana Park, Wadala Parthardi Raod, Indira Nagar, Nashik-422009, Maharashtra.",
+      },
+      {
+        iconpath: "https://www.svgrepo.com/show/532125/clock-two.svg",
+        type: "Availability",
+        value: "Mon-Sat: 6am-9pm",
+      },
+    ],
+  },
+  mr: {
+    heading: "संपर्क",
+    messageOn: "संदेश पाठवा",
+    whatsapp: "व्हाट्सअॅप",
+    mail: "मेल",
+    contactDetails: [
+      {
+        iconpath: "https://www.svgrepo.com/show/521544/call-receive.svg",
+        type: "फोन",
+        value: "9850263331",
+      },
+      {
+        iconpath: "https://www.svgrepo.com/show/533194/mail-alt.svg",
+        type: "ईमेल",
+        value: "amolmojad@gmail.com",
+      },
+      {
+        iconpath:
+          "https://www.svgrepo.com/show/418950/address-location-map.svg",
+        type: "पत्ता",
+        value:
+          "दुकान क्र. १६, गौरव प्लाझा, वंदना पार्क जवळ, वडाळा पारथर्डी रोड, इंदिरा नगर, नाशिक-४२२००९, महाराष्ट्र.",
+      },
+      {
+        iconpath: "https://www.svgrepo.com/show/532125/clock-two.svg",
+        type: "उपलब्धता",
+        value: "सोम-शनि: सकाळी ६ ते रात्री ९",
+      },
+    ],
+  },
+};
+
+export default function Contact({ lang }) {
+  const t = translations[lang] || translations.en;
 
   return (
-    <div id="contact" className="cus-section  section-bg1">
+    <div
+      id="contact"
+      className="cus-section  section-bg1 page-wrapper"
+      key={lang}
+    >
       <div className="container">
-        <h2 className="section-title ">Contact</h2>
+        <h2 className="section-title ">{t.heading}</h2>
         <div className="row">
           <div className="col-md-8">
             <div className="row d-flex align-items-top justify-content-start gap-3">
-              {contactdetails.map((contact, index) => (
+              {t.contactDetails.map((contact, index) => (
                 <div
                   key={index}
                   className="col-12 col-md-4 d-flex gap-3 p-2 w-auto"
@@ -51,7 +97,7 @@ export default function Contact() {
           <div className="col-md-4">
             <hr class="min-divider mobile" />
             <div className="contactdirect">
-              <span className="fs-4">Message on</span>
+              <span className="fs-4">{t.messageOn}</span>
               <div className="d-flex gap-3 mt-2 ">
                 <a
                   href="https://api.whatsapp.com/send?phone=9850263331"
@@ -65,7 +111,7 @@ export default function Contact() {
                       height="30px"
                       alt="logo"
                     />
-                    Whatsapp
+                    {t.whatsapp}
                   </div>
                 </a>
 
@@ -81,7 +127,7 @@ export default function Contact() {
                       height="30px"
                       alt="logo"
                     />
-                    Mail
+                    {t.mail}
                   </div>
                 </a>
               </div>

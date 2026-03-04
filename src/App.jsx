@@ -35,11 +35,11 @@ function App() {
       <Home lang={lang} />
       <About lang={lang} />
       <Testimonial lang={lang} />
-      <Services />
-      <Journey />
-      <Gallery />
-      <Contact />
-      <Footer />
+      <Services lang={lang} />
+      <Journey lang={lang} />
+      <Gallery lang={lang} />
+      <Contact lang={lang} />
+      <Footer lang={lang} />
     </div>
   );
 }
