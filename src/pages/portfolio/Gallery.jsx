@@ -105,12 +105,7 @@ export default function Gallery() {
         {/* Header */}
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div>
-            <a
-              href="#gallery"
-              className="display-6 text-decoration-none text-dark"
-            >
-              Gallery
-            </a>
+            <h1 className="section-title m-0">Gallery</h1>
           </div>
 
           <div className="d-flex gap-2">

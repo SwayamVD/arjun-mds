@@ -3,8 +3,7 @@
     position: relative;
     padding: 40px 20px 20px 20px;
     width: 400px;
-    min-height: 190px;
-    height: 100%;
+    height: 190px;
     /* border: 1px solid rgb(255, 179, 162); */
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -13,6 +12,13 @@
     flex-direction: column;
     gap: 10px;
     justify-content: start;
+}
+.servicecard-content{
+    overflow: hidden;
+}
+.servicecard-head{
+    font-size: 20px;
+    font-weight: 500;
 }
 .badge-icon{
     position: absolute;
@@ -30,5 +36,23 @@ p{
 @media screen and (max-width:576px) {
     .servicecard{
         width: 300px;
+        height: max-content;
     }
+}
+.animated-list {
+    min-height: 24px; /* prevents layout jump */
+}
+
+.animated-point {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
 }

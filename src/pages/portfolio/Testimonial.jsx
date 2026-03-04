@@ -24,7 +24,7 @@ const translations = {
         gender: "male",
         name: "Rahul Jadhav",
         review:
-          "Great teaching style and flexible timings. The practical sessions were very detailed and helped me understand traffic situations confidently. Highly recommend this driving school to beginners as well as those who want to improve their skills.",
+          "Great teaching style and flexible timings. The practical sessions were very detailed and helped me understand traffic situations confidently. Highly recommend this driving school to beginners as well as those who want to improve their skills g style and flexible timings. The practical sessions were very detailed and helped me understand traffic situations confidently. Highly recommend this driving .",
         rating: 4,
       },
     ],
@@ -162,9 +162,7 @@ export default function Testimonial({ lang }) {
       key={lang}
     >
       <div className="container">
-        <h2 className="text-center mb-3 mb-md-5 display-5 playfair-font">
-          {t.heading}
-        </h2>
+        <h2 className="section-title">{t.heading}</h2>
         <div className="reviewborder ">
           <div className="review-ratingcard">
             <a
@@ -204,35 +202,6 @@ export default function Testimonial({ lang }) {
           </div>
 
           <div className="row d-flex justify-content-center reviews-container">
-            {/* <div className="col-12 col-md-5 d-flex flex-column justify-content-start align-items-start review-col">
-                    {reviews1.map((review,index)=>(
-                        <div className="reviewcard" key={index}>
-                            <div className='revicecard-name'>
-                                <Badge 
-                                iconpath={`${review.gender === 'male'?'https://www.svgrepo.com/show/483638/male-student-18.svg':'https://www.svgrepo.com/show/483470/female-person-2.svg'}`} 
-                                color={review.gender}
-                                />
-                                <div>{review.name}</div>
-                            </div>
-                            <div className='review-text'>{review.review}</div>
-
-                        </div>
-                    ))}
-                </div>
-
-                <div className="col-12 col-md-5 d-flex flex-column justify-content-start align-items-start review-col">
-                    {reviews2.map((review,index)=>(
-                        <div className="reviewcard" key={index}>
-                            <div className='revicecard-name'>
-                                <Badge 
-                                iconpath={`${review.gender === 'male'?'https://www.svgrepo.com/show/483638/male-student-18.svg':'https://www.svgrepo.com/show/483470/female-person-2.svg'}`} 
-                                color={review.gender} />
-                                <div>{review.name}</div>
-                            </div>
-                            <div className='review-text'>{review.review}</div>
-                        </div>
-                    ))}
-                </div> */}
             <div className="col-12 col-md-5 review-col scroll-up">
               {[...t.reviews1, ...t.reviews1].map((review, index) => (
                 <div className="reviewcard" key={index}>

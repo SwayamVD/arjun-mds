@@ -1,23 +1,5 @@
+/* ================= Desktop Carousel ================= */
 
-
-
-
-/* .carousel-container {
-  position: relative;
-}
-.carousel-container img {
-    height: 400px;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 10px;
-}
-.service-servicecards {
-  position: relative;
-  bottom: -50px;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-} */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -28,32 +10,26 @@
   height: 400px;
   object-fit: cover;
   border-radius: 20px;
+  transition: 0.4s ease;
 }
 
-/* Overlapping card section */
+/* Overlapping Cards */
 .service-servicecards {
   position: absolute;
-  bottom: -50px;   /* overlap */
+  bottom: -60px;
   left: 0;
   width: 100%;
   z-index: 2;
 }
 
-/* Card layout */
 .service-wrapper {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 20px;
 }
 
-
-@media screen and (max-width:576px) {
-    .service-servicecards{
-        gap: 20px;
-    }
+.mobile-service-card{
+  border: 1px solid pink;
+  padding: 5px;
+  border-radius: 15px;
 }

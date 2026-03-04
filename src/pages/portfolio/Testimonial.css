@@ -12,6 +12,21 @@
   height: 400px;
   overflow: hidden;   /* important: hide overflow */
   padding: 50px 10px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
 }
 
 /* Scroll animation */
@@ -68,7 +83,7 @@
     margin-top: 10px;
 }
 
-.review-ratingcard{
+.review-ratingcard {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -78,9 +93,11 @@
   border-radius: 10px;
   gap: 20px;
   top: -33px;
-  left: 25px;
-  background-color: #FFFBFB;
 
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: #FFFBFB;
 }
 .review-justdial-redirect{
   position: relative;
@@ -96,7 +113,7 @@
   }
   .review-ratingcard{
     top: -33px;
-    left: 16px;
+    left: 50%;
     font-size: 12px;
   }
   .review-text{

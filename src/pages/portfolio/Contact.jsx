@@ -28,7 +28,7 @@ export default function Contact() {
   return (
     <div id="contact" className="cus-section  section-bg1">
       <div className="container">
-        <h2 className="mb-4 display-6 playfair-font">Contact</h2>
+        <h2 className="section-title ">Contact</h2>
         <div className="row">
           <div className="col-md-8">
             <div className="row d-flex align-items-top justify-content-start gap-3">
@@ -39,7 +39,9 @@ export default function Contact() {
                 >
                   <Badge iconpath={contact.iconpath} color="" />
                   <div className="d-flex flex-column">
-                    <span className="contact-type">{contact.type}</span>
+                    <span className="contact-type text-secondary">
+                      {contact.type}
+                    </span>
                     <span className="contact-value">{contact.value}</span>
                   </div>
                 </div>
