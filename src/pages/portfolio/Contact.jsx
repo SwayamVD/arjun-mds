@@ -1,6 +1,6 @@
 import "./Contact.css";
 import Badge from "../../components/Badge";
-
+import React, { useState } from "react";
 const translations = {
   en: {
     heading: "Contact",
@@ -66,7 +66,7 @@ const translations = {
 
 export default function Contact({ lang }) {
   const t = translations[lang] || translations.en;
-
+  const [show, setShow] = useState(false);
   return (
     <div
       id="contact"
@@ -131,6 +131,81 @@ export default function Contact({ lang }) {
                   </div>
                 </a>
               </div>
+            </div>
+            <div className="contactform mt-4 d-flex flex-column">
+              <span className="fs-4">Contact Form</span>
+      <button
+        className="btn btn-primary"
+        onClick={() => setShow(true)}
+      >
+        Open contact form
+      </button>
+
+      {show && (
+        <div
+          className="modal fade show d-block"
+          tabIndex="-1"
+          role="dialog"
+          style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+        >
+          <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: 440 }}>
+            <div className="modal-content">
+
+              <div className="modal-header">
+                <h5 className="modal-title">Get in touch</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShow(false)}
+                  aria-label="Close"
+                />
+              </div>
+
+              <div className="modal-body">
+                <form onSubmit={(e) => e.preventDefault()}>
+
+                  <div className="row g-3 mb-3">
+                    <div className="col">
+                      <label htmlFor="firstName" className="form-label">First name</label>
+                      <input type="text" className="form-control" id="firstName" placeholder="Ada" />
+                    </div>
+                    <div className="col">
+                      <label htmlFor="lastName" className="form-label">Last name</label>
+                      <input type="text" className="form-control" id="lastName" placeholder="Lovelace" />
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email</label>
+                    <input type="email" className="form-control" id="email" placeholder="ada@example.com" />
+                  </div>
+
+
+                  <div className="mb-3">
+                    <label htmlFor="message" className="form-label">Message</label>
+                    <textarea className="form-control" id="message" rows="4" placeholder="What's on your mind?" />
+                  </div>
+
+                  <div className="modal-footer px-0 pb-0">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      onClick={() => setShow(false)}
+                    >
+                      Cancel
+                    </button>
+                    <button type="submit" className="btn btn-primary">
+                      Send message
+                    </button>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
             </div>
           </div>
         </div>
