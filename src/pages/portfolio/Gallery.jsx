@@ -2,11 +2,11 @@ import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Badge from "../../components/Badge";
-import gallery1 from "../../assets/gallery-1.jpg";
-import gallery2 from "../../assets/gallery-2.jpg";
-import gallery3 from "../../assets/gallery-3.jpg";
-import gallery4 from "../../assets/gallery-4.jpg";
-import gallery5 from "../../assets/gallery-5.jpg";
+import gallery1 from "../../assets/gallery/banner-holding.jpeg";
+import gallery2 from "../../assets/gallery/guidelines.jpeg";
+import gallery3 from "../../assets/gallery/teaching.jpeg";
+import gallery4 from "../../assets/gallery/tools.jpeg";
+import gallery5 from "../../assets/gallery/trafic-signs.jpeg";
 import "./Gallery.css";
 
 const translations = {
@@ -15,33 +15,33 @@ const translations = {
     items: [
       {
         id: 1,
-        title: "Instructor's Teaching Desk",
+        title: "Banner Awareness Campaign",
         description:
-          "A neatly organized desk where the instructor explains traffic rules using charts, driving manuals, and real road scenario diagrams to help students understand road safety fundamentals.",
+          "Promoting road safety awareness through public banner campaigns.",
       },
       {
         id: 2,
-        title: "Traffic Signs Learning Board",
+        title: "Driving Guidelines",
         description:
-          "A detailed wall display of essential traffic signs and road symbols used during theory lessons to ensure students confidently recognize every signal on the road.",
+          "Displaying essential driving rules and safety guidelines for learners.",
       },
       {
         id: 3,
-        title: "Simulation Practice Setup",
+        title: "Practical Driving Training",
         description:
-          "A practical training corner where students observe steering control techniques, parking demonstrations, and defensive driving methods before heading onto real roads.",
+          "Hands-on driving instruction with real-world practical training.",
       },
       {
         id: 4,
-        title: "One-on-One Guidance",
+        title: "Training Tools & Equipment",
         description:
-          "The instructor providing personalized explanations about clutch control, braking distance, and safe lane changing to ensure each student builds confidence behind the wheel.",
+          "Demonstrating the use of training tools and driving aids.",
       },
       {
         id: 5,
-        title: "Student Progress & Certification",
+        title: "Traffic Signs Education",
         description:
-          "A display area showcasing student progress charts, mock test results, and successful license certifications achieved through structured training and disciplined practice.",
+          "Educating learners about important traffic signs and their meanings.",
       },
     ],
   },

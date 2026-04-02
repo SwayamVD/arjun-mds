@@ -100,7 +100,7 @@ export default function Contact({ lang }) {
               <span className="fs-4">{t.messageOn}</span>
               <div className="d-flex gap-3 mt-2 ">
                 <a
-                  href="https://api.whatsapp.com/send?phone=9850263331"
+                  href="https://web.whatsapp.com/send?phone=9850263331"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-decoration-none text-dark"
