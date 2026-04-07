@@ -37,8 +37,35 @@
 .section-bg-img {
   transition: background 0.3s ease;
 }
-.hero-buttons a{
-    background-color: rgba(206, 150, 150, 0.8);
-    border: 1px solid #ff99af;
+
+.hero-buttons a {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+
+  /* Glass effect */
+  background: rgba(255, 105, 135, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(197, 165, 165, 0.3);
+
+  /* Soft glow */
+  box-shadow: 0 8px 20px rgba(189, 189, 189, 0.3);
+
+  /* Smooth animation */
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .hero-buttons a {
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+/* Hover effect */
+.hero-buttons a:hover {
+  background: rgba(255, 105, 135, 0.45);
 }

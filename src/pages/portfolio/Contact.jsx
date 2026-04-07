@@ -18,7 +18,7 @@ const translations = {
       {
         iconpath: "https://www.svgrepo.com/show/533194/mail-alt.svg",
         type: "Email",
-        value: "amolmojad@gmail.com",
+        value: "amolmojad1484@gmail.com",
       },
       {
         iconpath:
@@ -39,6 +39,33 @@ const translations = {
 export default function Contact({ lang }) {
   const t = translations[lang] || translations.en;
   const [show, setShow] = useState(false);
+
+  // ✅ NEW STATE
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // ✅ HANDLE INPUT
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // ✅ MAILTO FUNCTION
+  const handleSendMail = () => {
+    if (!form.name || !form.email || !form.message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    const subject = encodeURIComponent(`Message from ${form.name}`);
+    const body = encodeURIComponent(form.message);
+
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=amolmojad1484@gmail.com&su=${subject}&body=${body}`;
+
+    window.open(gmailURL, "_blank"); // opens Gmail in new tab
+  };
 
   return (
     <div id="contact" className="cus-section py-3  section-bg1 page-wrapper">
@@ -74,20 +101,6 @@ export default function Contact({ lang }) {
               <span className="fs-5">{t.contactthrough}</span>
 
               <div className="d-flex gap-2 mt-2 flex-wrap">
-                {/* <a
-                  href="https://wa.me/919850263331"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-decoration-none"
-                >
-                  <div className="contactbadge whatsapp">
-                    <img
-                      src="https://www.svgrepo.com/show/510342/whatsapp.svg"
-                      alt="whatsapp"
-                    />
-                    {t.whatsapp}
-                  </div>
-                </a> */}
                 <a className="text-decoration-none">
                   <div
                     className="contactbadge contactform"
@@ -122,7 +135,6 @@ export default function Contact({ lang }) {
         {/* GOOGLE MAP */}
         <div className="mt-3 google-map">
           <iframe
-            // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1874.9310733355028!2d73.78400315672167!3d19.97229884533708!"
             src="https://www.google.com/maps?q=Arjun+Driving+School+Nashik&output=embed"
             width="100%"
             height="400"
@@ -152,14 +164,34 @@ export default function Contact({ lang }) {
                   <input
                     className="form-control mb-2"
                     placeholder="Your name"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
                   />
-                  <input className="form-control mb-2" placeholder="Email" />
+
+                  <input
+                    className="form-control mb-2"
+                    placeholder="Email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                  />
+
                   <textarea
                     className="form-control mb-2"
                     rows="3"
                     placeholder="Message"
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
                   />
-                  <button className="btn btn-dark w-100">Send message</button>
+
+                  <button
+                    className="btn btn-dark w-100"
+                    onClick={handleSendMail}
+                  >
+                    Send message
+                  </button>
                 </div>
               </div>
             </div>

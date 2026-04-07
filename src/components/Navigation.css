@@ -4,7 +4,16 @@
   
   transition: all 0.5s ease;
 }
+.navbar-toggler {
+  border: none !important;
+}
 
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
 @media (max-width: 768px) {
   .navbar-transparent {
     background-color: rgba(206, 150, 150, 0.65);
@@ -88,7 +97,7 @@
 .navbar-btn:active {
   transform: translateY(0); /* Sinks back down when clicked */
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 786px) {
     .navbar{
         padding: 5px 0;
     }
@@ -97,6 +106,7 @@
     }
     .navbar-nav{
         gap: 5px;
+        color: white;
     }
     .navbar-collapse {
       position: absolute;
@@ -106,10 +116,14 @@
       width:auto;
       z-index: 1000;
       padding: 15px;
+      color: white;
+  background-color: rgb(255, 234, 231, 0.85);
+  border-bottom: 2px solid #ffa8a8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(12px);
 
-      background-color: rgba(255, 240, 238, 0.95);
-      border: 1px solid #ffa8a8;
-      border-radius: 20px;
+      border-radius: 5px 5px 20px 20px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease;
     }
