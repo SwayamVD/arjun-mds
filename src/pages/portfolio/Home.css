@@ -5,7 +5,7 @@
 }
 @media (max-width: 768px) {
   .section-bg-img {
-    background-image: url("public/images/shop-mb.jpg");
+    background-image: url("/images/shop-mb.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
