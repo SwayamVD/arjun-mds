@@ -16,7 +16,6 @@ const translations = {
           "Reverse & parallel parking",
           "Hill start control",
           "Defensive driving skills",
-          "Road safety & traffic rule awareness",
         ],
       },
       {
@@ -32,7 +31,6 @@ const translations = {
           "Vehicle insurance assistance",
           "Address change in RC",
           "Vehicle registration support",
-          "Appointment booking & document guidance",
         ],
       },
     ],
@@ -127,12 +125,12 @@ export default function Services({ lang }) {
         </div>
 
         {/* ================= MOBILE VERSION ================= */}
-        <div className="d-block d-md-none">
+        {/* <div className="d-block d-md-none">
           <div className="row gap-5">
             {t.services.map((service, index) => (
               <div
                 key={index}
-                className="col-12  d-flex justify-content-center align-items-center mobile-service-card"
+                className="col-12  d-flex justify-content-center align-items-center"
               >
                 <ServiceCard
                   iconpath={service.iconpath}
@@ -140,6 +138,29 @@ export default function Services({ lang }) {
                   desp={service.desp}
                   points={service.points}
                 />
+              </div>
+            ))}
+          </div>
+        </div> */}
+        <div className="d-block d-md-none px-2">
+          <div className="mobile-services">
+            {t.services.map((service, index) => (
+              <div key={index} className="mobile-service-item">
+                {/* HEADER */}
+                <div className="mobile-service-header">
+                  <img src={service.iconpath} alt="icon" />
+                  <h5>{service.headline}</h5>
+                </div>
+
+                {/* DESCRIPTION */}
+                <p className="mobile-service-desp">{service.desp}</p>
+
+                {/* POINTS */}
+                <ul className="mobile-service-points ms-3">
+                  {service.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

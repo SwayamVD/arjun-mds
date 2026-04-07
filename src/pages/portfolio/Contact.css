@@ -1,41 +1,90 @@
-.contactbadge{
-    height: 45px;
-    width:  min-content;
-    padding: 20px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-.contactbadge.whatsapp{
-    background-color: #14d561;
+/* CARD */
+.contact-card {
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 10px;
 }
 
-.contactbadge.mail{
-    background-color: #FBBC04;
+/* TEXT */
+.contact-type {
+  font-size: 13px;
+  letter-spacing: 0.5px;
 }
 
-.contact-value{
-    font-size: 20px;
+.contact-value {
+  font-size: 18px;
+  font-weight: 500;
 }
-.min-divider.mobile {
-    display: none;
+
+/* RIGHT SIDE */
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+/* CTA BUTTONS */
+.contactbadge {
+  height: 48px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.contactbadge img {
+  height: 20px;
+}
+
+/* WHATSAPP */
+.contactbadge.whatsapp {
+  background: #14d561;
+  color: white;
+}
+
+
+/* MAIL */
+.contactbadge.mail {
+  background: #fbbc04;
+  color: black;
+}
+
+
+/* Contactform */
+.contactbadge.contactform {
+  background: #6f9dff;
+  color: rgb(0, 0, 0);
+}
+
+
+/* DIVIDER */
 .min-divider {
   border: none;
   height: 1px;
-  background: #ff0000;
-  margin: 20px 0;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 25px 0;
 }
 
-@media screen and (max-width:700px) {
-    .min-divider.mobile {
-        display: block;
-    }
-    .contact-value{
-        font-size: 16px;
-    }
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 15px;
+  }
+
+  .contact-value {
+    font-size: 15px;
+  }
+
+  .contactbadge {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-side {
+    margin-top: 20px;
+  }
 }

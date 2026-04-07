@@ -22,7 +22,7 @@ export default function ServiceCard({ iconpath, headline, desp, points }) {
   }, [points.length]);
   return (
     <div className="servicecard">
-      <div className="badge-icon">
+      <div className="badge-icon d-none d-md-block">
         <Badge iconpath={iconpath} color="service" />
       </div>
 

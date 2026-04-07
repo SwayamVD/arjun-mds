@@ -79,10 +79,31 @@
     gap: 10px;
     border-radius: 20px;
 }
+
 .review-text{
     margin-top: 10px;
 }
-
+@media (max-width: 768px) {
+  .section-title{
+    font-size: 40px;
+  }
+.reviewcard{
+    padding: 20px 10px 10px 10px;
+    border: 1px solid #FFB3A2;
+    border-radius: 10px;
+}
+.revicecard-name{
+    top: -20px;
+    left: -10px;
+    padding: 5px;
+    padding-right: 15px;
+    gap: 10px;
+    border-radius: 10px;
+}
+.review-text{
+  font-size: 10px;
+}
+}
 .review-ratingcard {
   position: absolute;
   display: flex;
@@ -115,9 +136,5 @@
     top: -33px;
     left: 50%;
     font-size: 12px;
-  }
-  .review-text{
-      font-size: 14px;
-
   }
 }

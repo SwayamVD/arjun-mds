@@ -28,8 +28,52 @@
   padding: 0 20px;
 }
 
-.mobile-service-card{
-  border: 1px solid pink;
-  padding: 5px;
-  border-radius: 15px;
+/* MOBILE SERVICES CONTAINER */
+.mobile-services {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* EACH SERVICE */
+.mobile-service-item {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.mobile-service-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-service-header img {
+  height: 22px;
+  width: 22px;
+}
+
+.mobile-service-header h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* DESCRIPTION */
+.mobile-service-desp {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 6px 0 10px 32px; /* aligned under text */
+}
+
+/* POINTS */
+.mobile-service-points {
+  padding-left: 32px;
+  margin: 0;
+}
+
+.mobile-service-points li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 1.4;
 }

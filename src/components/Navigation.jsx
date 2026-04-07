@@ -39,7 +39,7 @@ export default function Navigation({ toggleLang, toggleTheme, lang }) {
   }, []);
   return (
     <nav
-      className={`navbar navbar-expand-lg sticky-top ${scrolled ? "navbar-solid" : "section-bg1"}`}
+      className={`navbar navbar-expand-lg sticky-top ${scrolled ? "navbar-solid" : "navbar-transparent"}`}
     >
       <div className="container">
         <a className="navbar-brand" href="#">

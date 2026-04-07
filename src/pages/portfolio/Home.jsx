@@ -46,7 +46,7 @@ export default function Home({ lang }) {
   const t = translations[lang] || translations.en;
 
   return (
-    <section id="home" className="cus-section full-section section-bg1">
+    <section id="home" className="cus-section full-section section-bg-img">
       <div className="container">
         <div className="row align-items-center justify-content-around hover-parent">
           <div className="col-12 col-md-7">
@@ -63,10 +63,10 @@ export default function Home({ lang }) {
           </div>
 
           <div
-            className="col-12 col-md-4 text-start mt-3 mt-lg-0 page-wrapper"
+            className="home-text col-12 col-md-4 text-start mt-3 mt-lg-0 page-wrapper"
             key={lang}
           >
-            <div className="text-center text-lg-start">
+            <div className=" text-start">
               <h1 className="tagline playfair-font">{t.tagline}</h1>
 
               <div className="mt-4 mb-4">
@@ -97,14 +97,14 @@ export default function Home({ lang }) {
             <div class="hero-buttons mt-4 mb-4 mb-md-0 d-flex flex-row justify-content-center gap-3">
               <a
                 href="#services"
-                class="btn btn-outline-dark fw-medium px-4 py-2 rounded text-decoration-none"
+                class="btn  fw-medium px-4 py-2 rounded text-decoration-none"
               >
                 {t.services}
               </a>
 
               <a
                 href="#contact"
-                class="btn btn-dark fw-medium px-4 py-2 rounded text-decoration-none"
+                class="btn  fw-medium px-4 py-2 rounded text-decoration-none"
               >
                 {t.call}
               </a>

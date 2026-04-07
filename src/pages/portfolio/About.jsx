@@ -27,11 +27,11 @@ export default function About({ lang }) {
       <div className="container">
         <div className="row d-flex justify-content-between hover-parent">
           <div className="col-12 col-md-5 page-wrapper" key={lang}>
-            <h1 className=" highlight-underline">{t.name}</h1>
+            <h1 className="instructor-name highlight-underline">{t.name}</h1>
 
-            <p>{t.description}</p>
+            <p className="instructor-description">{t.description}</p>
 
-            <div className="d-flex flex-wrap gap-3">
+            <div className="instructor-spec d-flex flex-wrap gap-3">
               <span>{t.specialize}</span>
 
               {t.badges.map((text, index) => (

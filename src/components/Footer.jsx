@@ -3,15 +3,19 @@ import Badge from "./Badge";
 
 const translations = {
   en: {
+    brand: "Arjun Motor Driving School",
+    tagline: "Learn safe driving with confidence and expert guidance.",
     quickLinks: "Quick Links",
     connect: "Connect",
     home: "Home",
     about: "About",
     services: "Services",
     contact: "Contact",
-    copyright: "© 2024 Arjun MDS. All rights reserved.",
+    copyright: "© 2026 Arjun MDS. All rights reserved.",
   },
   mr: {
+    brand: "अर्जुन मोटर ड्रायव्हिंग स्कूल",
+    tagline: "विश्वासाने आणि सुरक्षितपणे ड्रायव्हिंग शिका.",
     quickLinks: "द्रुत दुवे",
     connect: "जोडा",
     home: "मुख्यपृष्ठ",
@@ -29,69 +33,67 @@ export default function Footer({ lang }) {
     {
       iconpath:
         "https://pnggallery.com/wp-content/uploads/justdial-jd-logo-02.png",
-      platform: "JustDial",
       link: "https://jsdl.in/DT-4662YI6E6U2",
     },
     {
       iconpath: "https://www.svgrepo.com/show/503338/facebook.svg",
-      platform: "Facebook",
       link: "https://jsdl.in/DT-4662YI6E6U2",
     },
     {
       iconpath: "https://www.svgrepo.com/show/521711/instagram.svg",
-      platform: "Instagram",
       link: "https://jsdl.in/DT-4662YI6E6U2",
     },
   ];
+
   return (
-    <footer className="py-4 footer page-wrapper" key={lang}>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-9 mb-3 mb-md-0">
-            <h5 className="mb-3">{t.quickLinks}</h5>
-            <ul className="list-unstyled">
+    <footer className="footer page-wrapper" key={lang}>
+      <div className="container px-3 px-md-auto footer-container">
+        <div className="row gy-4">
+          {/* BRAND */}
+          <div className="col-md-5">
+            <h5 className="footer-heading">{t.brand}</h5>
+            <p className="footer-tagline">{t.tagline}</p>
+          </div>
+
+          {/* LINKS */}
+          <div className="col-6 col-md-3">
+            <h6 className="footer-heading">{t.quickLinks}</h6>
+            <ul className="footer-links">
               <li>
-                <a href="#home" className="text-muted text-decoration-none">
-                  {t.home}
-                </a>
+                <a href="#home">{t.home}</a>
               </li>
               <li>
-                <a href="#about" className="text-muted text-decoration-none">
-                  {t.about}
-                </a>
+                <a href="#about">{t.about}</a>
               </li>
               <li>
-                <a href="#services" className="text-muted text-decoration-none">
-                  {t.services}
-                </a>
+                <a href="#services">{t.services}</a>
               </li>
               <li>
-                <a href="#contact" className="text-muted text-decoration-none">
-                  {t.contact}
-                </a>
+                <a href="#contact">{t.contact}</a>
               </li>
             </ul>
           </div>
-          <div className="col-md-3">
-            <h5 className="mb-3">{t.connect}</h5>
-            <div className="d-flex gap-3">
+
+          {/* SOCIAL */}
+          <div className="col-6 col-md-4">
+            <h6 className="footer-heading">{t.connect}</h6>
+            <div className="footer-socials">
               {sociallinks.map((link, index) => (
                 <a
                   href={link.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
                   key={index}
                 >
-                  <Badge iconpath={link.iconpath} color="" />
+                  <Badge iconpath={link.iconpath} />
                 </a>
               ))}
             </div>
           </div>
         </div>
-        <hr className="my-4 bg-secondary" />
-        <div className="text-center text-muted">
-          <p className="mb-0">{t.copyright}</p>
+
+        <div className="footer-bottom">
+          <span>{t.copyright}</span>
         </div>
       </div>
     </footer>

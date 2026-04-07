@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+  .baseofimage {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .section-bg-img {
+    background-image: url("images/shop-mb.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 768px) {
+
+    .tagline{
+        font-size: 35px;
+    }
+  .section-bg-img {
+    position: relative;
+    color: white;
+  }
+
+  .section-bg-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    z-index: 0;
+  }
+
+  .section-bg-img .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+.section-bg-img {
+  transition: background 0.3s ease;
+}
+.hero-buttons a{
+    background-color: rgba(206, 150, 150, 0.8);
+    border: 1px solid #ff99af;
+    color: white;
+}

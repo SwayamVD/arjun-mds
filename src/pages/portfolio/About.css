@@ -6,4 +6,13 @@
   .about-para{
     font-size: 14px;
   }
+  .instructor-name{
+    font-size: 35px;
+  }
+  .instructor-description{
+    font-size: 15px;
+  }
+  .instructor-spec{
+    font-size: 15px;
+  }
 }

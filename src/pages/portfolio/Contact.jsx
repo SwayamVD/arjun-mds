@@ -1,11 +1,13 @@
 import "./Contact.css";
 import Badge from "../../components/Badge";
 import React, { useState } from "react";
+
 const translations = {
   en: {
     heading: "Contact",
-    messageOn: "Message on",
+    contactthrough: "Contact Me",
     whatsapp: "Whatsapp",
+    contactform: "Contact Form",
     mail: "Mail",
     contactDetails: [
       {
@@ -32,198 +34,137 @@ const translations = {
       },
     ],
   },
-  mr: {
-    heading: "संपर्क",
-    messageOn: "संदेश पाठवा",
-    whatsapp: "व्हाट्सअॅप",
-    mail: "मेल",
-    contactDetails: [
-      {
-        iconpath: "https://www.svgrepo.com/show/521544/call-receive.svg",
-        type: "फोन",
-        value: "9850263331",
-      },
-      {
-        iconpath: "https://www.svgrepo.com/show/533194/mail-alt.svg",
-        type: "ईमेल",
-        value: "amolmojad@gmail.com",
-      },
-      {
-        iconpath:
-          "https://www.svgrepo.com/show/418950/address-location-map.svg",
-        type: "पत्ता",
-        value:
-          "दुकान क्र. १६, गौरव प्लाझा, वंदना पार्क जवळ, वडाळा पारथर्डी रोड, इंदिरा नगर, नाशिक-४२२००९, महाराष्ट्र.",
-      },
-      {
-        iconpath: "https://www.svgrepo.com/show/532125/clock-two.svg",
-        type: "उपलब्धता",
-        value: "सोम-शनि: सकाळी ६ ते रात्री ९",
-      },
-    ],
-  },
 };
 
 export default function Contact({ lang }) {
   const t = translations[lang] || translations.en;
   const [show, setShow] = useState(false);
+
   return (
-    <div
-      id="contact"
-      className="cus-section  section-bg1 page-wrapper"
-      key={lang}
-    >
-      <div className="container">
-        <h2 className="section-title ">{t.heading}</h2>
+    <div id="contact" className="cus-section py-3  section-bg1 page-wrapper">
+      <div className="container ">
+        <h2 className="section-title">{t.heading}</h2>
+
         <div className="row">
+          {/* LEFT - CONTACT INFO */}
           <div className="col-md-8">
-            <div className="row d-flex align-items-top justify-content-start gap-3">
-              {t.contactDetails.map((contact, index) => (
-                <div
-                  key={index}
-                  className="col-12 col-md-4 d-flex gap-3 p-2 w-auto"
-                >
-                  <Badge iconpath={contact.iconpath} color="" />
-                  <div className="d-flex flex-column">
-                    <span className="contact-type text-secondary">
-                      {contact.type}
-                    </span>
-                    <span className="contact-value">{contact.value}</span>
+            <div className="contact-card">
+              <div className="row g-3 g-md-4">
+                {t.contactDetails.map((contact, index) => (
+                  <div
+                    key={index}
+                    className="col-12 col-md-6 d-flex gap-3 align-items-start"
+                  >
+                    <Badge iconpath={contact.iconpath} />
+                    <div className="d-flex flex-column">
+                      <span className="contact-type text-secondary">
+                        {contact.type}
+                      </span>
+                      <span className="contact-value">{contact.value}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-          <div className="col-md-4">
-            <hr class="min-divider mobile" />
-            <div className="contactdirect">
-              <span className="fs-4">{t.messageOn}</span>
-              <div className="d-flex gap-3 mt-2 ">
-                <a
-                  href="https://web.whatsapp.com/send?phone=9850263331"
+
+          {/* RIGHT - ACTIONS */}
+          <div className="col-md-4 px-4 contact-side">
+            <div>
+              <span className="fs-5">{t.contactthrough}</span>
+
+              <div className="d-flex gap-2 mt-2 flex-wrap">
+                {/* <a
+                  href="https://wa.me/919850263331"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none text-dark"
+                  className="text-decoration-none"
                 >
                   <div className="contactbadge whatsapp">
                     <img
                       src="https://www.svgrepo.com/show/510342/whatsapp.svg"
-                      height="30px"
-                      alt="logo"
+                      alt="whatsapp"
                     />
                     {t.whatsapp}
                   </div>
+                </a> */}
+                <a className="text-decoration-none">
+                  <div
+                    className="contactbadge contactform"
+                    onClick={() => setShow(true)}
+                  >
+                    <img
+                      src="https://www.svgrepo.com/show/533194/mail-alt.svg"
+                      alt="mail"
+                    />
+                    {t.contactform}
+                  </div>
                 </a>
-
                 <a
-                  href="mailto:yourmail@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-decoration-none text-dark"
+                  href="mailto:amolmojad@gmail.com"
+                  className="text-decoration-none"
                 >
                   <div className="contactbadge mail">
                     <img
                       src="https://www.svgrepo.com/show/533194/mail-alt.svg"
-                      height="30px"
-                      alt="logo"
+                      alt="mail"
                     />
                     {t.mail}
                   </div>
                 </a>
               </div>
             </div>
-            <div className="contactform mt-4 d-flex flex-column">
-              <span className="fs-4">Contact Form</span>
-      <button
-        className="btn btn-primary"
-        onClick={() => setShow(true)}
-      >
-        Open contact form
-      </button>
-
-      {show && (
-        <div
-          className="modal fade show d-block"
-          tabIndex="-1"
-          role="dialog"
-          style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
-        >
-          <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: 440 }}>
-            <div className="modal-content">
-
-              <div className="modal-header">
-                <h5 className="modal-title">Get in touch</h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setShow(false)}
-                  aria-label="Close"
-                />
-              </div>
-
-              <div className="modal-body">
-                <form onSubmit={(e) => e.preventDefault()}>
-
-                  <div className="row g-3 mb-3">
-                    <div className="col">
-                      <label htmlFor="firstName" className="form-label">First name</label>
-                      <input type="text" className="form-control" id="firstName" placeholder="Ada" />
-                    </div>
-                    <div className="col">
-                      <label htmlFor="lastName" className="form-label">Last name</label>
-                      <input type="text" className="form-control" id="lastName" placeholder="Lovelace" />
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email</label>
-                    <input type="email" className="form-control" id="email" placeholder="ada@example.com" />
-                  </div>
-
-
-                  <div className="mb-3">
-                    <label htmlFor="message" className="form-label">Message</label>
-                    <textarea className="form-control" id="message" rows="4" placeholder="What's on your mind?" />
-                  </div>
-
-                  <div className="modal-footer px-0 pb-0">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      onClick={() => setShow(false)}
-                    >
-                      Cancel
-                    </button>
-                    <button type="submit" className="btn btn-primary">
-                      Send message
-                    </button>
-                  </div>
-
-                </form>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      )}
-            </div>
           </div>
         </div>
 
-        <hr class="min-divider" />
-        {/* Google Map */}
+        <hr className="min-divider" />
+
+        {/* GOOGLE MAP */}
         <div className="mt-3 google-map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1874.9310733355028!2d73.78400315672167!3d19.97229884533708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb23bb487507%3A0x7f9d279d33ebd28d!2sArjun%20Driving%20School!5e0!3m2!1sen!2sin!4v1771156352368!5m2!1sen!2sin"
+            // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1874.9310733355028!2d73.78400315672167!3d19.97229884533708!"
+            src="https://www.google.com/maps?q=Arjun+Driving+School+Nashik&output=embed"
             width="100%"
             height="400"
-            style={{ border: 0 }}
-            allowFullScreen
+            style={{ border: 0, borderRadius: "12px" }}
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Arjun Driving School Location"
+            title="Location"
           ></iframe>
         </div>
+
+        {/* MODAL */}
+        {show && (
+          <div
+            className="modal fade show d-block"
+            style={{ background: "rgba(0,0,0,0.5)" }}
+          >
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5>Get in touch</h5>
+                  <button
+                    className="btn-close"
+                    onClick={() => setShow(false)}
+                  />
+                </div>
+
+                <div className="modal-body">
+                  <input
+                    className="form-control mb-2"
+                    placeholder="Your name"
+                  />
+                  <input className="form-control mb-2" placeholder="Email" />
+                  <textarea
+                    className="form-control mb-2"
+                    rows="3"
+                    placeholder="Message"
+                  />
+                  <button className="btn btn-dark w-100">Send message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
