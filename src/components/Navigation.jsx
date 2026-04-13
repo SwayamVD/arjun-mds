@@ -1,5 +1,6 @@
 import "./Navigation.css";
 import { useState, useEffect } from "react";
+import { Phone, Mail, Clock } from "lucide-react";
 export default function Navigation({ toggleLang, toggleTheme, lang }) {
   const translations = {
     en: {
@@ -39,9 +40,19 @@ export default function Navigation({ toggleLang, toggleTheme, lang }) {
   }, []);
   return (
     <nav
-      className={`navbar navbar-expand-lg sticky-top ${scrolled ? "navbar-solid" : "navbar-transparent"}`}
+      className={`navbar navbar-expand-lg fixed-top d-flex flex-column ${scrolled ? "navbar-solid" : "navbar-transparent"}`}
     >
-      <div className="container">
+      <div
+        className={`d-none d-md-flex top-bar ${scrolled ? "top-bar-disappear" : ""}`}
+      >
+        <div className="left-side">Nashik, Maharashtra</div>
+        <div className="right-side">
+          <div className="left">+91 9850263331</div>
+          <div className="center">Mon – Sat, 6:00 AM – 9:00 PM</div>
+          <div className="right">amolmojad1484@gmail.com</div>
+        </div>
+      </div>
+      <div className="container pb-1 pt-1">
         <a className="navbar-brand" href="#">
           <img src="/images/arjun-mds-transparent.png" alt="ARDS Logo" />
         </a>

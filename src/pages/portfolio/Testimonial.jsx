@@ -158,7 +158,7 @@ export default function Testimonial({ lang }) {
   return (
     <section
       id="testimonials"
-      className="cus-section section-bg1 page-wrapper"
+      className="cus-section-2 section-bg1 page-wrapper"
       key={lang}
     >
       <div className="container">

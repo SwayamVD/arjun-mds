@@ -86,23 +86,24 @@ arjun-mds-portfolio/
 ├── public/
 │   └── images/              # Static images (logo, shop, instructor, service backgrounds)
 ├── src/
-│   ├── assets/              # Gallery images (gallery-1 to gallery-5)
+│   ├── assets/
+│   │   └── gallery/         # Gallery images (banner, guidelines, teaching, tools, traffic signs)
 │   ├── components/
 │   │   ├── Badge            # Reusable icon badge component
 │   │   ├── Footer           # Site footer with quick links & social
-│   │   ├── Navigation       # Sticky navbar with lang toggle
+│   │   ├── Navigation       # Sticky navbar with lang & theme toggle
 │   │   └── ServiceCard      # Animated service card with cycling points
 │   ├── pages/
 │   │   └── portfolio/
 │   │       ├── Home         # Hero section with stats & CTA
 │   │       ├── About        # Instructor bio & specializations
+│   │       ├── Testimonial  # Scrolling review cards
 │   │       ├── Services     # Service cards with background carousel
 │   │       ├── Journey      # Career timeline
-│   │       ├── Testimonial  # Scrolling review cards
 │   │       ├── Gallery      # Framer Motion image carousel
 │   │       └── Contact      # Contact details + Google Maps embed
 │   ├── App.jsx              # Root component, theme & lang state
-│   ├── translation.js       # Shared i18n translation object
+│   ├── translation.js       # Shared i18n translation object (structured by section)
 │   └── main.jsx             # React DOM entry point
 ├── index.html               # HTML shell with Bootstrap & font CDN links
 ├── vite.config.js
@@ -114,14 +115,23 @@ arjun-mds-portfolio/
 
 ## Key Features
 
-- **Bilingual** — English and Marathi with a single toggle button
-- **Dark / Light theme** — via `data-bs-theme` on `<html>`
-- **Responsive** — mobile-first layout using Bootstrap grid
+- **Bilingual** — English and Marathi with a single toggle button; body class (`lang-en` / `lang-mr`) applied for font-level control
+- **Dark / Light theme** — toggled via `data-bs-theme` on `<html>`, powered by Bootstrap 5
+- **Responsive** — mobile-first layout using Bootstrap grid; separate mobile hero background image
 - **Animated gallery** — Framer Motion carousel with peek cards
 - **Auto-scrolling testimonials** — two columns of review cards
 - **Service background carousel** — auto-cycling images every 3s
-- **Google Maps embed** — live location iframe
+- **Google Maps embed** — live location iframe in Contact section
 - **SEO meta tags** — description, keywords, author, robots in `index.html`
+- **Structured i18n** — `translation.js` exports a section-scoped object (`translations.en.home`, `translations.mr.home`, etc.) for clean per-component access
+
+---
+
+## Page Order (as rendered in App.jsx)
+
+```
+Navigation → Home → About → Testimonial → Services → Journey → Gallery → Contact → Footer
+```
 
 ---
 
@@ -133,6 +143,12 @@ npm run build     # Production build
 npm run preview   # Preview production build
 npm run lint      # Run ESLint
 ```
+
+---
+
+## Deployment
+
+Hosted on **Vercel** (static site). All images referenced in CSS must use absolute paths starting with `/` (e.g. `/images/shop-mb.jpg`) since Vite serves the `public/` folder at the root. Relative paths like `public/images/...` work locally but fail in production on Linux/case-sensitive filesystems.
 
 ---
 

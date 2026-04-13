@@ -1,6 +1,8 @@
 /* MAIN */
 .footer {
   padding: 40px 0 20px;
+  background-color: rgb(149, 64, 64);
+  color: white;
 }
 
 /* CONTAINER */
@@ -18,7 +20,7 @@
 
 .footer-tagline {
   font-size: 14px;
-  color: #000000c7;
+  color: #ddd4d4c7;
   margin-top: 6px;
 }
 
@@ -41,13 +43,13 @@
 
 .footer-links a {
   text-decoration: none;
-  color: #000000c7;
+  color: #ddd4d4c7;
   font-size: 14px;
   transition: 0.2s;
 }
 
 .footer-links a:hover {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 /* SOCIAL */
@@ -58,11 +60,11 @@
 
 /* BOTTOM */
 .footer-bottom {
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 15px;
   text-align: center;
   font-size: 13px;
-  color: #000000;
+  color: #ffffff;
 }
 
 /* MOBILE */
