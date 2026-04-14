@@ -40,6 +40,17 @@
   justify-content: end;
   gap: 50px;
 }
+.top-bar .left-side,
+.top-bar .right-side > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.top-bar svg {
+  flex-shrink: 0;
+  opacity: 0.75; /* slightly muted so icons feel supporting, not dominant */
+}
 .top-bar-disappear {
   height: 0;
   opacity: 0;

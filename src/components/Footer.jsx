@@ -37,7 +37,7 @@ export default function Footer({ lang }) {
     },
     {
       iconpath: "https://www.svgrepo.com/show/503338/facebook.svg",
-      link: "https://jsdl.in/DT-4662YI6E6U2",
+      link: "https://www.facebook.com/amol.mojad.79",
     },
     {
       iconpath: "https://www.svgrepo.com/show/521711/instagram.svg",

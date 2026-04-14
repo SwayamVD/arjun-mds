@@ -1,6 +1,6 @@
 import "./Navigation.css";
 import { useState, useEffect } from "react";
-import { Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, Mail } from "lucide-react";
 export default function Navigation({ toggleLang, toggleTheme, lang }) {
   const translations = {
     en: {
@@ -42,7 +42,7 @@ export default function Navigation({ toggleLang, toggleTheme, lang }) {
     <nav
       className={`navbar navbar-expand-lg fixed-top d-flex flex-column ${scrolled ? "navbar-solid" : "navbar-transparent"}`}
     >
-      <div
+      {/* <div
         className={`d-none d-md-flex top-bar ${scrolled ? "top-bar-disappear" : ""}`}
       >
         <div className="left-side">Nashik, Maharashtra</div>
@@ -50,6 +50,28 @@ export default function Navigation({ toggleLang, toggleTheme, lang }) {
           <div className="left">+91 9850263331</div>
           <div className="center">Mon – Sat, 6:00 AM – 9:00 PM</div>
           <div className="right">amolmojad1484@gmail.com</div>
+        </div>
+      </div> */}
+      <div
+        className={`d-none d-md-flex top-bar ${scrolled ? "top-bar-disappear" : ""}`}
+      >
+        <div className="left-side">
+          <MapPin size={13} strokeWidth={1.8} />
+          Nashik, Maharashtra
+        </div>
+        <div className="right-side">
+          <div className="left">
+            <Phone size={13} strokeWidth={1.8} />
+            +91 9850263331
+          </div>
+          <div className="center">
+            <Clock size={13} strokeWidth={1.8} />
+            Mon – Sat, 6:00 AM – 9:00 PM
+          </div>
+          <div className="right">
+            <Mail size={13} strokeWidth={1.8} />
+            amolmojad1484@gmail.com
+          </div>
         </div>
       </div>
       <div className="container pb-1 pt-1">
