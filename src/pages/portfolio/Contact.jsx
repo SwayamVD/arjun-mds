@@ -113,18 +113,6 @@ export default function Contact({ lang }) {
                     {t.contactform}
                   </div>
                 </a>
-                <a
-                  href="mailto:amolmojad@gmail.com"
-                  className="text-decoration-none"
-                >
-                  <div className="contactbadge mail">
-                    <img
-                      src="https://www.svgrepo.com/show/533194/mail-alt.svg"
-                      alt="mail"
-                    />
-                    {t.mail}
-                  </div>
-                </a>
               </div>
             </div>
           </div>
@@ -143,51 +131,98 @@ export default function Contact({ lang }) {
             title="Location"
           ></iframe>
         </div>
-
-        {/* MODAL */}
         {show && (
           <div
             className="modal fade show d-block"
             style={{ background: "rgba(0,0,0,0.5)" }}
+            onClick={() => setShow(false)}
           >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5>Get in touch</h5>
+            <div
+              className="modal-dialog modal-dialog-centered"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div
+                className="modal-content"
+                style={{ borderRadius: "12px", border: "none" }}
+              >
+                <div className="modal-header border-bottom pb-3">
+                  <div>
+                    <small className="text-muted">
+                      We'll get back to you shortly
+                    </small>
+                  </div>
                   <button
-                    className="btn-close"
+                    className="btn-close me-1"
                     onClick={() => setShow(false)}
                   />
                 </div>
 
-                <div className="modal-body">
-                  <input
-                    className="form-control mb-2"
-                    placeholder="Your name"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                  />
+                <div className="modal-body d-flex flex-column gap-3 pt-3">
+                  <div>
+                    <label
+                      className="form-label text-muted"
+                      style={{
+                        fontSize: "12px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      Your name
+                    </label>
+                    <input
+                      className="form-control"
+                      placeholder="Amol Mojad"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                    />
+                  </div>
 
-                  <input
-                    className="form-control mb-2"
-                    placeholder="Email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                  />
+                  <div>
+                    <label
+                      className="form-label text-muted"
+                      style={{
+                        fontSize: "12px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      Email address
+                    </label>
+                    <input
+                      className="form-control"
+                      placeholder="you@example.com"
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                    />
+                  </div>
 
-                  <textarea
-                    className="form-control mb-2"
-                    rows="3"
-                    placeholder="Message"
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                  />
+                  <div>
+                    <label
+                      className="form-label text-muted"
+                      style={{
+                        fontSize: "12px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      className="form-control"
+                      rows="4"
+                      placeholder="Write your message here..."
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
+                      style={{ resize: "vertical" }}
+                    />
+                  </div>
 
                   <button
-                    className="btn btn-dark w-100"
+                    className="btn btn-dark w-100 py-2"
                     onClick={handleSendMail}
                   >
                     Send message

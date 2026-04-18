@@ -60,9 +60,6 @@ export default function Footer({ lang }) {
             <h6 className="footer-heading">{t.quickLinks}</h6>
             <ul className="footer-links">
               <li>
-                <a href="#home">{t.home}</a>
-              </li>
-              <li>
                 <a href="#about">{t.about}</a>
               </li>
               <li>
@@ -70,6 +67,11 @@ export default function Footer({ lang }) {
               </li>
               <li>
                 <a href="#contact">{t.contact}</a>
+              </li>
+              <li>
+                <a href="https://arjun-mds-admin.vercel.app/">
+                  Instructor Login
+                </a>
               </li>
             </ul>
           </div>
