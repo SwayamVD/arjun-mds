@@ -69,7 +69,7 @@ export default function Footer({ lang }) {
                 <a href="#contact">{t.contact}</a>
               </li>
               <li>
-                <a href="https://arjun-mds-admin.vercel.app/">
+                <a href="https://instructor.arjundrivingschool.co.in//">
                   Instructor Login
                 </a>
               </li>
